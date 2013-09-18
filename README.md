@@ -13,4 +13,5 @@ include vrpn
 ## Required Puppet Modules
 
 * `boxen`
+* `homebrew`
 
