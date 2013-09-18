@@ -17,6 +17,6 @@ describe 'vrpn' do
 
     should contain_package('vrpn')
 
-    should contain_service('vrpn_server').with(:ensure => 'running')
+    should contain_service('dev.vrpn_server').with(:ensure => 'running')
   end
 end

@@ -27,22 +27,22 @@ class vrpn ($config = "vrpn_Tracker_NULL Tracker0 2 2.0\n", $defaultPort = false
     install_options => [
       '--clients'
     ],
-    notify          => Service['vrpn_server']
+    notify          => Service['dev.vrpn_server']
   }
 
   file { $vrpn::config::configfile:
     content => $config,
-    notify  => Service['vrpn_server']
+    notify  => Service['dev.vrpn_server']
   }
 
-  file { '/Library/LaunchDaemons/vrpn_server.plist':
+  file { '/Library/LaunchDaemons/dev.vrpn_server.plist':
     content => template('vrpn/vrpn_server.plist.erb'),
     group   => 'wheel',
-    notify  => Service['vrpn_server'],
+    notify  => Service['dev.vrpn_server'],
     owner   => 'root'
   }
 
-  service { 'vrpn_server':
+  service { 'dev.vrpn_server':
     ensure  => running,
     require => File[$vrpn::config::configfile]
   }
