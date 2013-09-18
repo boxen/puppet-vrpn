@@ -9,8 +9,10 @@
 #   class { 'vrpn':
 #     config => "vrpn_3DConnexion_Navigator spacenav\nvrpn_Tracker_NULL Tracker0 2 2.0\n"
 #   }
-class vrpn ($config = "vrpn_Tracker_NULL Tracker0 2 2.0") {
-  require vrpn::config
+class vrpn ($config = "vrpn_Tracker_NULL Tracker0 2 2.0\n", $defaultPort = false) {
+  class { 'vrpn::config':
+    defaultPort => $defaultPort
+  }
   require homebrew
 
   file { [

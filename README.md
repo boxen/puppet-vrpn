@@ -20,11 +20,12 @@ vrpn_print_devices Tracker0@localhost:13883
 
 ```puppet
 class { 'vrpn':
-  config => "vrpn_3DConnexion_Navigator spacenav\nvrpn_Tracker_NULL Tracker0 2 2.0\n"
+  config      => "vrpn_3DConnexion_Navigator spacenav\nvrpn_Tracker_NULL Tracker0 2 2.0\n",
+  defaultPort => true
 }
 ```
 
-Same as above but the content of `config` will be written to a *vrpn.cfg* which is used by the vrpn server.
+Same as above but the content of `config` will be written to a *vrpn.cfg* which is used by the vrpn server and the server will listen on the default port (3883).
 
 ## Required Puppet Modules
 
