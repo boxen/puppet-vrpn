@@ -7,9 +7,9 @@
 # or:
 #
 #   class { 'vrpn':
-#     config => 'vrpn_3DConnexion_Navigator spacenav\nvrpn_Tracker_DTrack DTrack 5000 0.5 3 2 2 3 0 4 1'
+#     config => "vrpn_3DConnexion_Navigator spacenav\nvrpn_Tracker_NULL Tracker0 2 2.0\n"
 #   }
-class vrpn ($config = 'vrpn_3DConnexion_Navigator spacenav') {
+class vrpn ($config = "vrpn_Tracker_NULL Tracker0 2 2.0") {
   require vrpn::config
   require homebrew
 

@@ -10,8 +10,25 @@ This installs [VRPN](http://www.cs.unc.edu/Research/vrpn/) via Homebrew and opti
 include vrpn
 ```
 
+This will install VRPN and setup the vrpn server on port 13883 with the default NULL-tracker device. You can test if the server is running with:
+
+```bash
+vrpn_print_devices Tracker0@localhost:13883
+```
+
+----
+
+```puppet
+class { 'vrpn':
+  config => "vrpn_3DConnexion_Navigator spacenav\nvrpn_Tracker_NULL Tracker0 2 2.0\n"
+}
+```
+
+Same as above but the content of `config` will be written to a *vrpn.cfg* which is used by the vrpn server.
+
 ## Required Puppet Modules
 
 * `boxen`
 * `homebrew`
+* `repository`
 
