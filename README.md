@@ -2,7 +2,7 @@
 
 This installs [VRPN](http://www.cs.unc.edu/Research/vrpn/) via Homebrew and optionally runs a VRPN server as a daemon.
 
-[![Build Status](https://travis-ci.org/bilke/puppet-vrpn.png?branch=master)](https://travis-ci.org/bilke/puppet-vrpn)
+[![Build Status](https://travis-ci.org/boxen/puppet-vrpn.svg?branch=master)](https://travis-ci.org/boxen/puppet-vrpn)
 
 ## Usage
 

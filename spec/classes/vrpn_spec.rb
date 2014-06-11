@@ -11,9 +11,9 @@ describe 'vrpn' do
   end
 
   it do
-    should include_class('vrpn::config')
+    should contain_class('vrpn::config')
 
-    should include_class('homebrew')
+    should contain_class('homebrew')
 
     should contain_package('vrpn')
 
